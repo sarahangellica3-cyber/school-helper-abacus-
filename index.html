@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Soroban Interaktif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="space-bg"></div>
+
+<div class="soroban-container">
+  <div class="soroban" id="soroban"></div>
+  <div class="values" id="values"></div>
+
+  <div class="controls">
+    <button id="undoBtn">Undo</button>
+    <button id="redoBtn">Redo</button>
+    <button id="resetBtn">Reset</button>
+    <button id="proModeBtn">Pro Mental Flash Mode</button>
+  </div>
+</div>
+
+<!-- Overlay untuk Pro Mode -->
+<div id="proOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <h2>Unlock Pro Mental Flash Mode</h2>
+    <p>Bayar 20.000 Rupiah atau nonton 5 iklan untuk membuka sementara.</p>
+    <button id="payBtn">Bayar 20.000 Rupiah</button>
+    <button id="adBtn">Nonton 5 Iklan</button>
+    <button id="closeOverlay">Tutup</button>
+  </div>
+</div>
+
+<!-- Overlay untuk Opsi Mode -->
+<div id="modeOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <h2>Pilih Operasi dan Level</h2>
+    <div class="options-grid">
+      <div class="option-group">
+        <label class="option-label">Jenis Operasi:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="operation" value="addition" checked> Addition</label>
+          <label><input type="radio" name="operation" value="subtraction"> Subtraction</label>
+          <label><input type="radio" name="operation" value="multiplication"> Multiplication</label>
+          <label><input type="radio" name="operation" value="division"> Division</label>
+        </div>
+      </div>
+      <div class="option-group">
+        <label class="option-label">Level:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="level" value="1" checked> Beginner (1 detik / angka)</label>
+          <label><input type="radio" name="level" value="0.6"> Intermediate (0.6 detik)</label>
+          <label><input type="radio" name="level" value="0.3"> Advanced (0.3 detik)</label>
+          <label><input type="radio" name="level" value="0.15"> Extreme (0.15 detik)</label>
+        </div>
+      </div>
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="closeModeOverlay">Tutup</button>
+  </div>
+</div>
+
+<!-- Overlay untuk Flash Mode -->
+<div id="flashOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <div id="numberDisplay"></div>
+    <div id="answerSection" class="hidden">
+      <p>What’s the final answer?</p>
+      <input type="number" id="answerInput">
+      <button id="submitBtn">Submit</button>
+      <div id="result"></div>
+    </div>
+    <button id="closeFlashOverlay">Tutup</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
